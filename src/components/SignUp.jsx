@@ -91,6 +91,9 @@ const SignUp = () => {
                         <input type="password" id="password" required
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                            maxlength="20"
+                             minlength="8"
+                              title="Password must be between 8 and 20 characters."
                             className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
