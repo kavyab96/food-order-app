@@ -1,0 +1,4 @@
+[
+  { "id": 1, "name": "Momos", "category": "", "price": 26, "rating": 4.5, "image": "/images/noodles.avif" },
+  { "id": 2, "name": "Momos", "category": "", "price": 26, "rating": 4.5, "image": "/images/noodles.avif" }
+]
