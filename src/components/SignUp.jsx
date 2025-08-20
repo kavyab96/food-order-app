@@ -53,6 +53,9 @@ const SignUp = () => {
           
     }
 
+    const handleResetForm =()=>{
+          setFormData({name: "",password: "",email: "",usertype: ""})
+    }
 
     return (
         <div className='w-full h-full flex items-center justify-center '>
@@ -110,6 +113,7 @@ const SignUp = () => {
                         </select>
                     </div>
 
+
                     <button
                         type="submit"
                         className="w-full rounded-lg bg-blue-400 py-2 text-white font-medium hover:bg-blue-600 transition"
@@ -117,6 +121,8 @@ const SignUp = () => {
                         {/* onClick={handleSubmit} */}
                         Sign Up
                     </button>
+                    <button type='reset' className='w-full rounded-lg bg-red-400 py-2 text-white font-medium hover:bg-red-600 transition' 
+                    onClick={handleResetForm}>Clear</button>
                 </form>
             </div>
 
