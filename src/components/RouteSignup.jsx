@@ -1,13 +1,14 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import logo from "../assets/logo.png";
 
 const RouteSignup = () => {
     return (
         <div>
-            <header className='w-[100%] h-[12vh] bg-slate-500 text-white flex justify-center items-center'>
-                <nav className=''>
+            <header className='w-[100%] h-[12vh] text-black flex justify-center items-center shadow-md '>
+                <nav className='w-[100%] h-[100%] flex items-center justify-between p-6' >
+                    <NavLink to="/" className=""><img src={logo}  width="80px" alt="logo" /> </NavLink>
                     <ul className='flex gap-3 justify-items-end'>
-                        <li> <NavLink to="/" className="hidden">hero</NavLink></li>
                         <li> <NavLink to="/login"> Log in</NavLink></li>
                         <li> <NavLink to="/signup"> Sign up</NavLink></li>
                     </ul>
