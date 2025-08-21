@@ -1,11 +1,21 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet,useNavigate  } from 'react-router-dom'
 import logo from "../assets/logo6.png";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { logout } from '../features/auth/authSlice';
 
 const RouteSignup = () => {
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+      console.log('auth in home page',isLoggedIn);
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
+
+    function handleLogout(){
+        dispatch(logout())
+        navigate("/")
+    }
 
     return (
         <div>
@@ -37,13 +47,13 @@ const RouteSignup = () => {
                                     > Cart</NavLink></li>
 
 
-                                    <li> <NavLink to="/logout"
+                                    <li> <button onClick={handleLogout}
                                         className={
                                             ({ isActive }) => isActive
                                                 ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
                                                 : "hover:text-red-400"
                                         }
-                                    > Logout</NavLink></li>
+                                    > Logout</button></li>
                                 </>
 
                             ) : (<>
