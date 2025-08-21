@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate  } from 'react-router-dom';
+import { useDispatch,useSelector } from 'react-redux';
+import {login} from '../features/auth/authSlice'
 
 const Login = () => {
 
   const [user, setUser] = useState({ email: "", password: "" })
   const [errors, setErrors] = useState({ email: "", password: "" });
+  
+  const authUser = useSelector((state)=>state.auth)
+  console.log('auth',authUser);
+  const dispatch =useDispatch();
+  const navigate = useNavigate()
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -37,8 +44,11 @@ const Login = () => {
       const storeUsers = JSON.parse(localStorage.getItem("users")) || [] 
       const matchUser = storeUsers.find(u=>u.email===user.email &&  u.password===user.password)
       if(matchUser){
-
+        // Update Redux authentication state:
+        dispatch(login(matchUser));
+        navigate("/home")
         alert('login success')
+       
       }else{
         alert("Invalid email or password");
       }

@@ -15,6 +15,8 @@ import RouteSignup from './components/RouteSignup.jsx';
 import Hero from './components/Hero.jsx';
 import Login from './components/Login.jsx';
 import SignUp from './components/SignUp.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
+import Home from './components/Home.jsx';
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
     {
     path: "/",
     element: <RouteSignup/>,
+    errorElement:<ErrorPage/>,
     children:[
       {
         path:"/",
@@ -34,6 +37,11 @@ const router = createBrowserRouter([
       {
         path:"/signup",
         element:<SignUp/>
+      },
+
+       {
+        path:"/home",
+        element:<Home/>
       }
 
     ]
