@@ -38,6 +38,25 @@ const router = createBrowserRouter([
 
     ]
     },
+
+]);
+
+createRoot(document.getElementById('root')).render(
+  // <StrictMode>
+  <Provider store={store}>
+    {/* <RouterProvider router={router} /> */}
+    <RouterProvider router={router} />
+    {/* <App /> */}
+  </Provider>
+  // </StrictMode>,
+)
+
+
+
+
+
+
+
   // {
   //   path: "/",
   //   element: <RootLayout />,
@@ -62,14 +81,3 @@ const router = createBrowserRouter([
  
 
   // { path: "/home", element: <Home /> }
-]);
-
-createRoot(document.getElementById('root')).render(
-  // <StrictMode>
-  <Provider store={store}>
-    {/* <RouterProvider router={router} /> */}
-    <RouterProvider router={router} />
-    {/* <App /> */}
-  </Provider>
-  // </StrictMode>,
-)

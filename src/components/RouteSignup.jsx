@@ -1,16 +1,62 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import logo from "../assets/logo.png";
+import logo from "../assets/logo6.png";
 
 const RouteSignup = () => {
     return (
         <div>
             <header className='w-[100%] h-[12vh] text-black flex justify-center items-center shadow-md '>
-                <nav className='w-[100%] h-[100%] flex items-center justify-between p-6' >
-                    <NavLink to="/" className=""><img src={logo}  width="80px" alt="logo" /> </NavLink>
+                <nav className='w-[100%] h-[100%] flex items-center justify-between py-6 px-8 ' >
+                    <NavLink to="/" className=""><img src={logo} width="80px" alt="logo" /> </NavLink>
                     <ul className='flex gap-3 justify-items-end'>
-                        <li> <NavLink to="/login"> Log in</NavLink></li>
-                        <li> <NavLink to="/signup"> Sign up</NavLink></li>
+                        <li>
+                            <NavLink to="/login"
+                                className={
+                                    ({ isActive }) => isActive
+                                        ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                        : "hover:text-red-400"
+                                }
+                            > Log in</NavLink>
+                        </li>
+
+                        <li> <NavLink to="/signup"
+                            className={
+                                ({ isActive }) => isActive
+                                    ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                    : "hover:text-red-400"
+                            }
+                        > Sign up</NavLink></li>
+
+
+                        {/* after login  */}
+
+                        <li> <NavLink to="/home"
+                            className={
+                                ({ isActive }) => isActive
+                                    ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                    : "hover:text-red-400"
+                            }
+                        > Home</NavLink></li>
+
+
+                        <li> <NavLink to="/cart"
+                            className={
+                                ({ isActive }) => isActive
+                                    ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                    : "hover:text-red-400"
+                            }
+                        > Cart</NavLink></li>
+
+
+                        <li> <NavLink to="/logout"
+                            className={
+                                ({ isActive }) => isActive
+                                    ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                    : "hover:text-red-400"
+                            }
+                        > Logout</NavLink></li>
+
+                        {/* after login  */}
                     </ul>
 
                 </nav>
