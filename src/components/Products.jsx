@@ -1,5 +1,6 @@
 import React from "react";
 import { CgSquare  } from "react-icons/cg";
+import { AiFillStar } from "react-icons/ai";
 
 const Products = ({ product }) => {
   return (
@@ -33,10 +34,10 @@ const Products = ({ product }) => {
               product.rating >= 4
                 ? "bg-green-400"
                 : product.rating >= 3
-                ? "bg-yellow-400"
+                ? "bg-yellow-300"
                 : "bg-orange-400"
-            } text-white px-2 py-[0.2px] rounded`}
-            >{product.rating}</p>
+            } text-white px-2 py-[0.2px] rounded w-[50px] flex justify-center items-center`}
+            >{product.rating} <AiFillStar className="text-white-600"/></p>
       </div>
 
 

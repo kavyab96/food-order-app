@@ -1,19 +1,19 @@
 import React from 'react'
-import { NavLink, Outlet,useNavigate  } from 'react-router-dom'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import logo from "../assets/logo6.png";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from '../features/auth/authSlice';
-import { CgShoppingCart,CgHome,CgLogOff  } from "react-icons/cg";
+import { CgShoppingCart, CgHome, CgLogOff } from "react-icons/cg";
 
 const RouteSignup = () => {
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
-      console.log('auth in home page',isLoggedIn);
+    console.log('auth in home page', isLoggedIn);
 
     const navigate = useNavigate()
     const dispatch = useDispatch();
 
-    function handleLogout(){
+    function handleLogout() {
         localStorage.removeItem("auth")
         dispatch(logout())
         navigate("/")
@@ -31,42 +31,46 @@ const RouteSignup = () => {
                             (
 
                                 <>
-                                    <li> <NavLink 
-                                        title="Home"
-                                        to="/home"
-                                        className={
-                                            ({ isActive }) => isActive
-                                                ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
-                                                : "hover:text-red-400"
-                                        }
-                                    > <CgHome size={24} />
-                                    </NavLink></li>
-
-
-                                    <li> 
-                                        <NavLink 
-                                            title="Cart"
-                                            to="/cart"
+                                    <li>
+                                        <NavLink title="Home" to="/home"
                                             className={
                                                 ({ isActive }) => isActive
-                                                    ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                                    ? "text-salte-800 font-semibold border-b-2 border-red-300 pb-1"
                                                     : "hover:text-red-400"
-                                            }
-                                            >  
-                                            <CgShoppingCart size={24} />
+                                            }>
+                                            <span className="inline-block">
+                                                <CgHome size={24} />
+                                            </span>
                                         </NavLink>
                                     </li>
 
 
+                                    <li>
+                                        <NavLink
+                                            title="Cart"
+                                            to="/cart"
+                                            className={
+                                                ({ isActive }) => isActive
+                                                    ? "text-salte-800 font-semibold border-b-2 border-red-300 pb-1"
+                                                    : "hover:text-red-400"
+                                            }
+                                        >
+                                            <span className="inline-block">
+                                                <CgShoppingCart size={24} />
+                                            </span>
+                                        </NavLink>
+                                    </li>
+
+                                            
                                     <li> <button onClick={handleLogout}
-                                    title='Logout'
-                                     className="hover:text-red-400 text-salt-800 font-semibold"
-                                        // className={
-                                        //     ({ isActive }) => isActive
-                                        //         ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
-                                        //         : "hover:text-red-400"
-                                        // }
-                                    > <CgLogOff size={24}/> </button></li>
+                                        title='Logout'
+                                        className="hover:text-red-400 text-salte-800 font-semibold">
+
+                                        <span className="inline-block">
+                                            <CgLogOff size={24} />
+                                        </span>
+                                    </button>
+                                    </li>
                                 </>
 
                             ) : (<>
