@@ -1,0 +1,84 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "name": "Margherita Pizza",
+      "category":"Pizza",
+      "type": "veg",
+      "price": 220,
+      "rating":4.3,
+      "image": "/images/pizza.jpg",
+      "description": "Classic cheese pizza with fresh mozzarella and basil."
+    },
+    {
+      "id": 2,
+      "name": "Chicken Biryani",
+      "category":"Biryani",
+      "type": "non-veg",
+      "price": 350,
+      "rating":4.5,
+      "image": "/images/chicken biriyani.jpg",
+      "description": "Aromatic basmati rice cooked with tender chicken and spices."
+    },
+    {
+      "id": 3,
+      "name": "Paneer Butter Masala",
+      "category":"Paneer",
+      "type": "veg",
+      "price": 280,
+      "rating":2.3,
+      "image": "https://media.istockphoto.com/id/1024585168/photo/paneer-butter-masala-also-known-as-panir-makhani-or-makhanwala-served-in-a-ceramic-or-wooden.webp?a=1&b=1&s=612x612&w=0&k=20&c=5OznhGaZ_I5VIQeZiaymTl5f68ldXM8kUAtHAadf7BQ=",
+      "description": "Cottage cheese cooked in creamy tomato-based gravy."
+    },
+    {
+      "id": 4,
+      "name": "Grilled Fish",
+      "category":"Fish",
+      "type": "non-veg",
+      "price": 400,
+      "rating":3.3,
+      "image": "/images/fish.webp",
+      "description": "Fresh fish grilled with spices and lemon."
+    },
+    {
+      "id": 5,
+      "name": "Veg Burger",
+      "category":"Burger",
+      "type": "veg",
+      "price": 150,
+      "rating":3.9,
+      "image": "https://plus.unsplash.com/premium_photo-1664648063600-249e75fa7fd7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHZlZ2l0YWJsZSUyMGJ1cmdlcnxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Crispy veg patty with lettuce, tomato, and mayo in a soft bun."
+    },
+    {
+      "id": 6,
+      "name": "Chicken Shawarma",
+      "category":"Shawarma",
+      "type": "non-veg",
+      "price": 180,
+      "rating":4.1,
+      "image": "/images/shawarma.jpg",
+      "description": "Juicy chicken strips wrapped in pita bread with garlic sauce."
+    },
+    {
+      "id": 7,
+      "name": "Soupy Chicken Noodles",
+      "category":"Noodles",
+      "type": "non-veg",
+      "price": 180,
+      "rating":4.0,
+      "image": "/images/noodles.avif",
+      "description": "Juicy chicken strips wrapped in pita bread with garlic sauce."
+    },
+     {
+      "id": 8,
+      "name": "Chicken Momos",
+      "category":"Momos",
+      "type": "non-veg",
+      "price": 180,
+      "rating":4.3,
+      "image": "/images/momos.avif",
+      "description": "Juicy chicken strips wrapped in pita bread with garlic sauce."
+    }
+  ]
+}

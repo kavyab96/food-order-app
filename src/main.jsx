@@ -7,16 +7,15 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-// import Products from './components/Products.jsx';
-// import About from './components/About.jsx';
-// import Home from './components/Home.jsx';
-// import RootLayout from './components/RootLayout.jsx';
+
 import RouteSignup from './components/RouteSignup.jsx';
 import Hero from './components/Hero.jsx';
 import Login from './components/Login.jsx';
 import SignUp from './components/SignUp.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import Cart from './components/Cart.jsx';
 import Home from './components/Home.jsx';
+import {foodItemsLoader} from './components/Home.jsx'
 
 
 const router = createBrowserRouter([
@@ -41,7 +40,12 @@ const router = createBrowserRouter([
 
        {
         path:"/home",
-        element:<Home/>
+        element:<Home/>,
+        loader:foodItemsLoader
+      },
+       {
+        path:"/cart",
+        element:<Cart/>
       }
 
     ]
@@ -62,30 +66,3 @@ createRoot(document.getElementById('root')).render(
 
 
 
-
-
-
-  // {
-  //   path: "/",
-  //   element: <RootLayout />,
-  //   children: [
-  //     {
-  //       path: "/",
-  //       element: <Products />,
-  //       // loader: teamLoader,
-  //     },
-
-  //     {
-  //       path: "/about",
-  //       element: <About />
-  //     },
-
-  //     { 
-  //       path: "/home", 
-  //       element: <Home /> 
-  //     }
-  //   ],
-  // },
- 
-
-  // { path: "/home", element: <Home /> }

@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const storedAuth = JSON.parse(localStorage.getItem("auth")) || null;
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    isLoggedIn: false,
+    isLoggedIn: !!storedAuth,
     user: null
   },
   reducers: {

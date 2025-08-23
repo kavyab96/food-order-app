@@ -3,6 +3,7 @@ import { NavLink, Outlet,useNavigate  } from 'react-router-dom'
 import logo from "../assets/logo6.png";
 import { useSelector,useDispatch } from "react-redux";
 import { logout } from '../features/auth/authSlice';
+import { CgShoppingCart,CgHome,CgLogOff  } from "react-icons/cg";
 
 const RouteSignup = () => {
 
@@ -13,6 +14,7 @@ const RouteSignup = () => {
     const dispatch = useDispatch();
 
     function handleLogout(){
+        localStorage.removeItem("auth")
         dispatch(logout())
         navigate("/")
     }
@@ -29,31 +31,42 @@ const RouteSignup = () => {
                             (
 
                                 <>
-                                    <li> <NavLink to="/home"
+                                    <li> <NavLink 
+                                        title="Home"
+                                        to="/home"
                                         className={
                                             ({ isActive }) => isActive
                                                 ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
                                                 : "hover:text-red-400"
                                         }
-                                    > Home</NavLink></li>
+                                    > <CgHome size={24} />
+                                    </NavLink></li>
 
 
-                                    <li> <NavLink to="/cart"
-                                        className={
-                                            ({ isActive }) => isActive
-                                                ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
-                                                : "hover:text-red-400"
-                                        }
-                                    > Cart</NavLink></li>
+                                    <li> 
+                                        <NavLink 
+                                            title="Cart"
+                                            to="/cart"
+                                            className={
+                                                ({ isActive }) => isActive
+                                                    ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                                    : "hover:text-red-400"
+                                            }
+                                            >  
+                                            <CgShoppingCart size={24} />
+                                        </NavLink>
+                                    </li>
 
 
                                     <li> <button onClick={handleLogout}
-                                        className={
-                                            ({ isActive }) => isActive
-                                                ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
-                                                : "hover:text-red-400"
-                                        }
-                                    > Logout</button></li>
+                                    title='Logout'
+                                     className="hover:text-red-400 text-salt-800 font-semibold"
+                                        // className={
+                                        //     ({ isActive }) => isActive
+                                        //         ? "text-salt-800 font-semibold border-b-2 border-red-300 pb-1"
+                                        //         : "hover:text-red-400"
+                                        // }
+                                    > <CgLogOff size={24}/> </button></li>
                                 </>
 
                             ) : (<>
@@ -83,7 +96,7 @@ const RouteSignup = () => {
                 </nav>
             </header>
 
-            <main className='w-[100%] h-[88vh]'>
+            <main className='w-[100%] h-auto'>
                 <Outlet />
             </main>
 

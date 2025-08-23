@@ -46,6 +46,7 @@ const Login = () => {
       if(matchUser){
         // Update Redux authentication state:
         dispatch(login(matchUser));
+        localStorage.setItem("auth", "true");
         navigate("/home")
         alert('login success')
        
