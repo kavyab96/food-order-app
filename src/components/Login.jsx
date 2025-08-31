@@ -9,7 +9,6 @@ const Login = () => {
   const [errors, setErrors] = useState({ email: "", password: "" });
   
   const authUser = useSelector((state)=>state.auth)
-  console.log('auth',authUser);
   const dispatch =useDispatch();
   const navigate = useNavigate()
 
@@ -78,8 +77,8 @@ const Login = () => {
         <div className='flex flex-col'>
           <label htmlFor="password">Password <span>*</span></label>
           <input type="password" id='password' className='rounded p-[5px]' name='password'
-            maxlength="20"
-            minlength="8"
+            maxLength="20"
+            minLength="8"
             required
             value={user.password}
             onChange={handleChange} />

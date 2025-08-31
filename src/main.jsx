@@ -1,60 +1,76 @@
 // import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import store from './store/store'
+import { store, persistor } from './store/store'
+import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-// import Products from './components/Products.jsx';
-// import About from './components/About.jsx';
-// import Home from './components/Home.jsx';
-// import RootLayout from './components/RootLayout.jsx';
-import RouteSignup from './components/RouteSignup.jsx';
+
+import RouteLayout from './components/RouteLayout.jsx';
 import Hero from './components/Hero.jsx';
 import Login from './components/Login.jsx';
 import SignUp from './components/SignUp.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
+import Cart from './components/Cart.jsx';
 import Home from './components/Home.jsx';
+import { foodItemsLoader } from './components/Home.jsx'
+import Profile from './components/Profile.jsx'
+import CheckOut from './components/CheckOut.jsx'
 
 
 const router = createBrowserRouter([
 
-    {
+  {
     path: "/",
-    element: <RouteSignup/>,
-    errorElement:<ErrorPage/>,
-    children:[
+    element: <RouteLayout />,
+    errorElement: <ErrorPage />,
+    children: [
       {
-        path:"/",
-        element:<Hero/>
+        path: "/",
+        element: <Hero />
       },
       {
-        path:"/login",
-        element:<Login/>
+        path: "/login",
+        element: <Login />
       },
       {
-        path:"/signup",
-        element:<SignUp/>
+        path: "/signup",
+        element: <SignUp />
       },
 
-       {
-        path:"/home",
-        element:<Home/>
+      {
+        path: "/home",
+        element: <Home />,
+        loader: foodItemsLoader
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
+      },
+      {
+        path: "/checkout",
+        element: <CheckOut />
       }
 
+
     ]
-    },
+  },
 
 ]);
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
   <Provider store={store}>
-    {/* <RouterProvider router={router} /> */}
-    <RouterProvider router={router} />
-    {/* <App /> */}
+    <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+      <RouterProvider router={router} />
+    </PersistGate>
   </Provider>
   // </StrictMode>,
 )
@@ -62,30 +78,3 @@ createRoot(document.getElementById('root')).render(
 
 
 
-
-
-
-  // {
-  //   path: "/",
-  //   element: <RootLayout />,
-  //   children: [
-  //     {
-  //       path: "/",
-  //       element: <Products />,
-  //       // loader: teamLoader,
-  //     },
-
-  //     {
-  //       path: "/about",
-  //       element: <About />
-  //     },
-
-  //     { 
-  //       path: "/home", 
-  //       element: <Home /> 
-  //     }
-  //   ],
-  // },
- 
-
-  // { path: "/home", element: <Home /> }
