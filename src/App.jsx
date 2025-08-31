@@ -1,9 +1,9 @@
 import './styles/App.css'
-import products from './data/productsData.json';
+// import products from './data/productsData.json';
 import SignUp from './components/SignUp';
 function App() {
- const a = products[0]
- console.log(a);
+//  const a = products[0]
+//  console.log(a);
  
   return (
     <>

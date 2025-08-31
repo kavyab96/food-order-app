@@ -26,8 +26,7 @@ const ErrorPage = () => {
           px-[40px] py-3
            bg-gradient-to-r from-orange-400 to-pink-500 
           text-white rounded-lg
-           hover:bg-blue-600 
-            hover:from-blue-500 hover:to-blue-400 
+          hover:from-blue-500 hover:to-blue-400 
            transition duration-300 absolute bottom-[5px]">
             Go Back
         </button>

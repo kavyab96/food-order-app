@@ -1,19 +1,16 @@
 import axios from 'axios';
 import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData  } from 'react-router-dom';
 import Products from './Products';
 import Filter from './Filter'
 import { useState } from 'react';
+// import { useSelector } from 'react-redux';
 
 
 //food loader function//
 export async function foodItemsLoader() {
  try{
-
-   const isAuthed = localStorage.getItem("auth") === "true";
-   if (!isAuthed) {
-     throw redirect("/login");
-   }
+   
    const resp = await axios.get("http://localhost:5000/foods");
     return resp.data
  }catch(error){
@@ -25,10 +22,19 @@ export async function foodItemsLoader() {
 
 const Home = () => {
 
+  // const navigate = useNavigate();
+  //  const isAuthed =  useSelector((state)=>state.auth.isLoggedIn)
+  //  if (!isAuthed) {
+  //    navigate("/login");
+  //    return null
+  //   }
+
   const foods = useLoaderData()
   const [filter, setFilter] =useState("")
    const [ratingFilter, setRatingFilter] = useState("all");
   const [priceSort, setPriceSort] = useState(""); // high | low
+
+
 
 
   let filterFood = foods.filter((item)=>{
@@ -55,13 +61,13 @@ const Home = () => {
   return (
    
 
-     <div className="p-6">
+     <div className="w-[100%] min-h-screen p-6">
       <h1 className="text-2xl font-bold text-center mb-6">Food Menu</h1>
       <Filter filter={filter} setFilter={setFilter} 
             ratingFilter={ratingFilter} setRatingFilter={setRatingFilter}
             priceSort={priceSort} setPriceSort ={setPriceSort}/>
 
-      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className=" grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6">
         {filterFood.map((item) => (
           <Products key={item.id} product={item} />
         ))}

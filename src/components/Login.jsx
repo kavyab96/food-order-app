@@ -9,7 +9,6 @@ const Login = () => {
   const [errors, setErrors] = useState({ email: "", password: "" });
   
   const authUser = useSelector((state)=>state.auth)
-  console.log('auth',authUser);
   const dispatch =useDispatch();
   const navigate = useNavigate()
 
@@ -46,7 +45,6 @@ const Login = () => {
       if(matchUser){
         // Update Redux authentication state:
         dispatch(login(matchUser));
-        localStorage.setItem("auth", "true");
         navigate("/home")
         alert('login success')
        

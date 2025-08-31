@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const storedAuth = JSON.parse(localStorage.getItem("auth")) || null;
+// const storedAuth = JSON.parse(localStorage.getItem("auth")) || null;
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    isLoggedIn: !!storedAuth,
+    isLoggedIn: null,
     user: null
   },
   reducers: {
@@ -17,12 +17,18 @@ export const authSlice = createSlice({
     logout:(state)=>{
         state.isLoggedIn = false;
         state.user = null;
+    },
+    updateAddress: (state, action) => {
+      if (state.user) {
+        state.user.address = action.payload;
+      }
     }
+
 
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { login,logout } = authSlice.actions
+export const { login,logout,updateAddress } = authSlice.actions
 
 export default authSlice.reducer
