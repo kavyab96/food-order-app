@@ -17,7 +17,8 @@ const ErrorPage = () => {
         }
         navigate('/home')
       }else{
-        navigate("/")
+         window.location.href = import.meta.env.BASE_URL;
+        navigate("")
       }
   }
 
@@ -26,7 +27,7 @@ const ErrorPage = () => {
 
       <div className="w-full flex flex-col items-center justify-center relative">
         
-        <img src="/images/pnf-2.png" alt="page not found image" width="18%"  />      
+        <img  src= {`${import.meta.env.BASE_URL}images/pnf-2.png`}  alt="page not found image" width="18%"  />      
         <button  
         onClick={handleBack}
           className="

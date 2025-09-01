@@ -1,7 +1,7 @@
 import React from "react";
 import { CgSquare } from "react-icons/cg";
 import { AiFillStar } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { MdDelete } from "react-icons/md";
 import { LuFolderPen} from "react-icons/lu";
 
@@ -9,13 +9,7 @@ import { LuFolderPen} from "react-icons/lu";
 const Products = ({ product,handleDelete,handleEditClick }) => {
 
 
-
-  const dispatch = useDispatch()
-  // const cart = useSelector((state) => state.cartData.items)
-  // console.table(cart)
-  // Check if product is already in cart
-  // const cartItem = cart.find((item) => item.id === product.id);
-
+  // const dispatch = useDispatch()
   
 
 

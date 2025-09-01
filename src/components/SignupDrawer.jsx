@@ -186,7 +186,7 @@ const SignupDrawer = ({ signupDrawer, setSignupDrawer }) => {
                 </div>
 
                 <div className='fixed top-10 right-10' >
-                    <img src="/images/indian-food.webp" alt="image" width={150} />
+                    <img src="images/indian-food.webp" alt="image" width={150} />
                 </div>
 
 

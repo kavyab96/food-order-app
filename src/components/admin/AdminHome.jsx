@@ -14,8 +14,12 @@ export async function foodItemsLoader() {
   try {
 
     // const resp = await axios.get("http://localhost:5000/foods");
-    const resp = await axios.get("https://my-json-server.typicode.com/kavyab96/json-server-data/foods");
-    return resp.data
+    // const resp = await axios.get("https://my-json-server.typicode.com/kavyab96/json-server-data/foods");
+    const resp = await axios.get(`${import.meta.env.BASE_URL}db.json`);
+    // return resp.data
+    // console.log(resp.data);
+    
+    return resp.data.foods;
   } catch (error) {
     throw new Response("failed to load items", {
       status: error.response?.status || 500

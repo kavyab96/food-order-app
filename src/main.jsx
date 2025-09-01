@@ -82,7 +82,11 @@ const router = createBrowserRouter([
   //   ]
   // },
 
-]);
+],
+ {
+    basename: "/food-order-app" // <-- add this
+  }
+);
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>

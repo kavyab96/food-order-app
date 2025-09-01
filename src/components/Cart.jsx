@@ -17,7 +17,7 @@ const Cart = () => {
         cartItems.length === 0 ? (
           <>
             <div className='w-[100%] h-[100vh] flex items-center justify-center relative'>
-              <img src="/images/emptycart.png" alt="empty cart" className='w-[25%] absolute top-[20%]' />
+              <img src="images/emptycart.png" alt="empty cart" className='w-[25%] absolute top-[20%]' />
               <Link to="/home" className='bg-green-300 hover:bg-[#38d579] text-white text-[1.1rem] font-bold p-3 rounded-lg absolute bottom-[39%]'>Back to Home</Link>
 
               {/* <p>Your cart is empty.</p> */}
