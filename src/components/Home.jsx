@@ -11,7 +11,8 @@ import { useState } from 'react';
 export async function foodItemsLoader() {
  try{
    
-   const resp = await axios.get("http://localhost:5000/foods");
+  //  const resp = await axios.get("http://localhost:5000/foods");
+   const resp = await axios.get("https://my-json-server.typicode.com/kavyab96/json-server-data/foods");
     return resp.data
  }catch(error){
     throw new Response("failed to load items",{
@@ -22,12 +23,6 @@ export async function foodItemsLoader() {
 
 const Home = () => {
 
-  // const navigate = useNavigate();
-  //  const isAuthed =  useSelector((state)=>state.auth.isLoggedIn)
-  //  if (!isAuthed) {
-  //    navigate("/login");
-  //    return null
-  //   }
 
   const foods = useLoaderData()
   const [filter, setFilter] =useState("")

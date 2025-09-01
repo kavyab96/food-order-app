@@ -6,7 +6,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     isLoggedIn: null,
-    user: null
+    user: null,
   },
   reducers: {
   
@@ -30,5 +30,13 @@ export const authSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { login,logout,updateAddress } = authSlice.actions
+
+
+// Selector function 
+export const isAdmin = (state) => {
+  
+  const isAdmin = state.auth.user?.name.trim().toLowerCase()==='admin'?true:false;
+  return isAdmin;
+};
 
 export default authSlice.reducer

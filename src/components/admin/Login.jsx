@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link,useNavigate  } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
-import {login} from '../features/auth/authSlice'
+import { login } from '../../features/auth/authSlice';
 
 const Login = () => {
 
@@ -45,7 +45,7 @@ const Login = () => {
       if(matchUser){
         // Update Redux authentication state:
         dispatch(login(matchUser));
-        navigate("/home")
+        navigate("/admin/home")
         alert('login success')
        
       }else{
