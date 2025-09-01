@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react';
 
 const Filter = ({ filter, setFilter,ratingFilter,setRatingFilter,priceSort,setPriceSort }) => {

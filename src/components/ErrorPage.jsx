@@ -1,13 +1,20 @@
 import React from 'react'
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { isAdmin as selectIsAdmin} from '../features/auth/authSlice';
 
 const ErrorPage = () => {
+  const isAdmin = useSelector(selectIsAdmin)
+  
   const navigate =useNavigate()
   const isLoggedIn = useSelector((state)=>state.auth.isLoggedIn)
 
   const handleBack =()=>{
       if(isLoggedIn){
+        if(isAdmin){
+          navigate('/admin/home')
+          return
+        }
         navigate('/home')
       }else{
         navigate("/")
