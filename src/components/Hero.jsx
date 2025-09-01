@@ -19,8 +19,17 @@ const Hero = () => {
 
     <div className="w-[100%] h-screen relative overflow-hidden ">
       {/* bg-[url('./images/pizza-slice.webp')] bg-no-repeat bg-cover bg-center  */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 bg-[url('images/pizza-slice.webp')] bg-no-repeat bg-cover bg-center"
+        animate={{ scale: [1, 1.06, 1] }}
+        transition={{ duration: 12, ease: "linear", repeat: Infinity }}
+        aria-hidden="true"
+      > */}
+      <motion.div
+        className="absolute inset-0 bg-no-repeat bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/pizza-slice.webp)`
+        }}
         animate={{ scale: [1, 1.06, 1] }}
         transition={{ duration: 12, ease: "linear", repeat: Infinity }}
         aria-hidden="true"
@@ -43,7 +52,7 @@ const Hero = () => {
 
         </motion.div>
       </motion.div>
-    </div>
+    </div >
   )
 }
 
