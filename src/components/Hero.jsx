@@ -20,7 +20,7 @@ const Hero = () => {
     <div className="w-[100%] h-screen relative overflow-hidden ">
       {/* bg-[url('./images/pizza-slice.webp')] bg-no-repeat bg-cover bg-center  */}
       <motion.div
-        className="absolute inset-0 bg-[url('./images/pizza-slice.webp')] bg-no-repeat bg-cover bg-center"
+        className="absolute inset-0 bg-[url('images/pizza-slice.webp')] bg-no-repeat bg-cover bg-center"
         animate={{ scale: [1, 1.06, 1] }}
         transition={{ duration: 12, ease: "linear", repeat: Infinity }}
         aria-hidden="true"
