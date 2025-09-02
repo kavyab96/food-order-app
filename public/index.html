@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Order App</title>
+
     <script type="text/javascript">
       (function() {
         var search = window.location.search;
         if (search.indexOf("redirect=") !== -1) {
           var redirect = decodeURIComponent(search.split("redirect=")[1]);
-        //   window.history.replaceState(null, null, redirect);
-         window.location.replace(redirect); // hard replace
+          var base = "/food-order-app"; // your repo name
+          window.location.replace(base + redirect);
         }
       })();
     </script>
-
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Order App</title>
   </head>
   <body>
     <div id="root"></div>
