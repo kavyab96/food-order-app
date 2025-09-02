@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { Link,useNavigate  } from 'react-router-dom';
-import { useDispatch,useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../features/auth/authSlice';
+import { toast } from "react-toastify"; 
 
 const Login = () => {
 
   const [user, setUser] = useState({ email: "", password: "" })
   const [errors, setErrors] = useState({ email: "", password: "" });
-  
-  const authUser = useSelector((state)=>state.auth)
-  const dispatch =useDispatch();
+
+  const authUser = useSelector((state) => state.auth)
+  const dispatch = useDispatch();
   const navigate = useNavigate()
 
   function handleChange(e) {
@@ -40,16 +41,17 @@ const Login = () => {
 
     setErrors(tempErrors)
     if (valid) {
-      const storeUsers = JSON.parse(localStorage.getItem("users")) || [] 
-      const matchUser = storeUsers.find(u=>u.email===user.email &&  u.password===user.password)
-      if(matchUser){
+      const storeUsers = JSON.parse(localStorage.getItem("users")) || []
+      const matchUser = storeUsers.find(u => u.email === user.email && u.password === user.password)
+      if (matchUser) {
         // Update Redux authentication state:
         dispatch(login(matchUser));
         navigate("/admin/home")
-        alert('login success')
-       
-      }else{
-        alert("Invalid email or password");
+        // alert('login success')
+        toast.success("Login successful");
+
+      } else {
+        toast.error("Invalid email or password");
       }
 
     }

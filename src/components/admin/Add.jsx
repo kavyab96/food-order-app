@@ -1,6 +1,8 @@
 import React from 'react'
 import { LuX } from "react-icons/lu";
 import { useState } from 'react';
+import { toast } from "react-toastify"; 
+
 
 
 const Add = ({ addItemModal, setAddItemModal, addNewItem }) => {
@@ -65,10 +67,11 @@ const Add = ({ addItemModal, setAddItemModal, addNewItem }) => {
         setErrors(tempErrors)
         if (valid) {
             addNewItem(item); // <-- call parent function
-            alert('item added')
+            toast.success("item added");
 
         } else {
-            alert('failed')
+           
+            toast.error("Failed to add Item");
         }
     }
 
@@ -90,7 +93,7 @@ const Add = ({ addItemModal, setAddItemModal, addNewItem }) => {
             }
 
 
-            <div className={`h-screen w-[50%] bg-white fixed top-0 right-0 z-50 transform transition-transform duration-500 
+            <div className={`h-screen w-full md:w-1/2 bg-white fixed top-0 right-0 z-50 transform transition-transform duration-500 
                     ${addItemModal ? "translate-x-0" : "translate-x-full"}  `}>
 
 

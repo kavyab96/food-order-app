@@ -120,7 +120,7 @@ const ProceedToPay = () => {
                     ) :
                     (
                         <div className='w-[100%] h-[100%]  px-10 py-5'>
-                            <div className='w[100%] my-2 mx-auto text-start flex flex-col gap-2'>
+                            <div className='w[100%] my-2 mx-auto text-center sm:text-start flex flex-col gap-2'>
                                 <h2 className='font-bold text-[1.3rem] text-white-300'>
                                     Account
                                 </h2>
@@ -130,16 +130,17 @@ const ProceedToPay = () => {
                                 </p>
                             </div>
 
-                            <div className=' grid grid-cols-2 gap-3 mt-10'>
-                                <button className='p-2 w-[80%] font-semibold text-[0.9rem] bg-white  text-[#09ac63]  border border-white
+                            <div className=' grid grid-cols-1 sm:grid-cols-2 gap-3 mt-10 justify-items-center'>
+                                <button className='p-2 w-[80%] font-semibold text-[0.7rem] md:text-[0.9rem] bg-white  text-[#09ac63]  border border-white
                                  hover:shadow-lg  hover:scale-[1.02] transition-all duration-300 ease-in-out'
                                     onClick={() => setShowLoginDrawer(true)}>Have an account ?
-                                    <p className='text-[1rem] font-bold'>LOGIN</p>
+                                    <p className='text-[0.8rem] md:text-[1rem] font-bold'>LOGIN</p>
                                 </button>
 
                                 <button
                                     onClick={() => setSignupDrawer(true)}
-                                    className='p-2 w-[80%] font-semibold text-[0.9rem]  hover:scale-[1.02] bg-[#09ac63] text-white border border-[#09ac63] hover:shadow-lg'>New to Cusino ? <p className='text-[1rem] font-bold'>SIGN UP</p></button>
+                                    className='p-2 w-[80%] font-semibold text-[0.7rem] md:text-[0.9rem]  hover:scale-[1.02] bg-[#09ac63] text-white border border-[#09ac63] hover:shadow-lg'>
+                                        New to Cusino ? <p className='text-[0.8rem] md:text-[1rem] font-bold'>SIGN UP</p></button>
                             </div>
                         </div>
                     )

@@ -24,6 +24,9 @@ import AdminHome from './components/admin/AdminHome.jsx'
 import ProtectedAdminRoute from './components/admin/ProtectedAdminRoute.jsx';
 
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const router = createBrowserRouter([
 
   {
@@ -93,6 +96,7 @@ createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
       <RouterProvider router={router} />
+       <ToastContainer position="top-right" autoClose={3000} />
     </PersistGate>
   </Provider>
   // </StrictMode>,

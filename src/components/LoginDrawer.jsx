@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { LuX } from "react-icons/lu";
 import { useDispatch } from 'react-redux';
 import { login } from '../features/auth/authSlice';
+import { toast } from "react-toastify"; // 
+// import "react-toastify/dist/ReactToastify.css";
 
 const LoginDrawer = ({ showLoginDrawer, setShowLoginDrawer }) => {
     const dispatch = useDispatch();
@@ -43,10 +45,10 @@ const LoginDrawer = ({ showLoginDrawer, setShowLoginDrawer }) => {
                 dispatch(login(matchUser));
 
                 handleClose();
-                alert('login success')
+                toast.success("Login successful");
 
             } else {
-                alert("Invalid email or password");
+                toast.error("Invalid email or password");
             }
 
         }
@@ -72,7 +74,7 @@ const LoginDrawer = ({ showLoginDrawer, setShowLoginDrawer }) => {
             }
 
             
-            <div className={`h-screen w-[40%] bg-white fixed top-0 right-0 z-50 transform transition-transform duration-500 
+            <div className={`h-screen w-full md:w-1/2 bg-white fixed top-0 right-0 z-50 transform transition-transform duration-500 
                 ${showLoginDrawer ? "translate-x-0" : "translate-x-full"}  `}>
 
 

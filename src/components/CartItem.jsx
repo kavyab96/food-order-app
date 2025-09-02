@@ -8,7 +8,7 @@ const CartItem = ({ item }) => {
     const dispatch = useDispatch()
 
     return (
-        <div className="w-[100%] p-6 flex items-center justify-between border rounded-lg shadow-lg  bg-white dark:bg-gray-800">
+        <div className="w-[100%] p-6 flex flex-col md:flex-row items-start md:items-center  justify-between border rounded-lg shadow-lg  bg-white dark:bg-gray-800">
 
             <div className="flex items-center justify-center gap-10 ">
                 <img
@@ -24,7 +24,7 @@ const CartItem = ({ item }) => {
 
             </div>
 
-            <div className=" flex gap-4 flex-wrap ">
+            <div className=" flex gap-4 flex-row ">
                 <div className="bg-gray-300 dark:bg-gray-500 flex gap-3 justify-center items-center rounded-lg">
                     <button className="px-3 py-1 rounded-lg  hover:bg-gray-400 "
                         onClick={() => dispatch(decrementQty(item.id))} > - </button>

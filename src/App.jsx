@@ -1,18 +1,14 @@
 import './styles/App.css'
-// import products from './data/productsData.json';
-import SignUp from './components/SignUp';
+import { ToastContainer } from "react-toastify";
+
 function App() {
-//  const a = products[0]
-//  console.log(a);
- 
-  return (
+
+return (
     <>
-      <SignUp/>
-       {/* <h1 className='text-emerald-400'>Cuisino</h1>
-       <img src={a.image} alt="img"  /> */}
-     
+      {/* your routes/components */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
-  )
+  );
 }
 
 export default App

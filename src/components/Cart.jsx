@@ -12,56 +12,51 @@ const Cart = () => {
 
   return (
     <div className="p-3">
-      {/* <h1 className="text-2xl font-bold ">Your Cart</h1> */}
       {
         cartItems.length === 0 ? (
-          <>
-            <div className='w-[100%] h-[100vh] flex items-center justify-center relative'>
-              <img src="images/emptycart.png" alt="empty cart" className='w-[25%] absolute top-[20%]' />
-              <Link to="/home" className='bg-green-300 hover:bg-[#38d579] text-white text-[1.1rem] font-bold p-3 rounded-lg absolute bottom-[39%]'>Back to Home</Link>
+          <div className='w-full h-screen flex flex-col items-center justify-center relative'>
+            <img
+              src="images/emptycart.png"
+              alt="empty cart"
+              className='w-[60%] md:w-[25%] mb-5'
+            />
+            <Link
+              to="/home"
+              className='bg-green-300 hover:bg-[#38d579] text-white text-[1.1rem] font-bold px-5 py-3 rounded-lg'
+            >
+              Back to Home
+            </Link>
+          </div>
+        ) : (
+          <div className='w-full h-automin-h-screen flex flex-col md:flex-row items-start md:items-center justify-around gap-3 p-5'>
 
-              {/* <p>Your cart is empty.</p> */}
-            </div>
-          </>
-        ) :
-          (
-            <div className='w-[100%] h-[100vh] flex items-center justify-around  gap-3  p-5'>
-
-
-              <div className="  w-[55%]  h-[90%] flex flex-col gap-2  p-6 bg-slate-400 rounded-lg">
-
-                {/* cart div start */}
-                <div className='w-[100% h-[100%] overflow-y-auto flex flex-col gap-2 p-5'>
-                  {cartItems.map((item, index) => (
-                    <>
-                      <div className=" w-[100%] ">
-                        <CartItem key={index} item={item} />
-                      </div>
-                    </>
-                  ))}
-                  {/* cart div end */}
-                </div>
-
-                <div className='w-[100%] px-5'>
-
-                  {/* bill start  */}
-                  <BillDetail />
-                  {/* bill start  */}
-                </div>
+            {/* Left: Cart + Bill */}
+            <div className="w-full  md:w-[55%] md:h-[90%] flex flex-col gap-2 p-6 bg-slate-400 rounded-lg">
+              
+              {/* Cart Items */}
+              <div className='w-full max-h-[60vh] overflow-y-auto flex flex-col gap-2 p-5'>
+                {cartItems.map((item, index) => (
+                  <div key={index} className="w-full">
+                    <CartItem item={item} />
+                  </div>
+                ))}
               </div>
 
-
-              {/* ProceedToPay starts  */}
-              <div className="w-[40%] h-[90%] text-center bg-slate-400 rounded-lg ">
-                <ProceedToPay />
+              {/* Bill */}
+              <div className='w-full px-5'>
+                <BillDetail />
               </div>
-              {/* ProceedToPay ends */}
-
             </div>
-          )
+
+            {/* Right: Proceed To Pay */}
+            <div className="w-full md:w-[40%] md:h-[90%] text-center bg-slate-400 rounded-lg p-6">
+              <ProceedToPay />
+            </div>
+          </div>
+        )
       }
     </div>
   );
 };
 
-export default Cart
+export default Cart;

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { LuX } from "react-icons/lu";
 import { useDispatch } from 'react-redux';
 import { login } from '../features/auth/authSlice';
+import { toast } from "react-toastify"; 
+
 
 const SignupDrawer = ({ signupDrawer, setSignupDrawer }) => {
     const dispatch = useDispatch();
@@ -74,7 +76,8 @@ const SignupDrawer = ({ signupDrawer, setSignupDrawer }) => {
 
             users.push(formData);
             localStorage.setItem("users", JSON.stringify(users));
-            alert(`User Registered Successfully`, formData);
+            // alert(`User Registered Successfully`, formData);
+            toast.success("User Registered Successfully");
             // reseting formData 
             handleClose();
             // reseting formData 
@@ -105,7 +108,7 @@ const SignupDrawer = ({ signupDrawer, setSignupDrawer }) => {
             }
 
 
-            <div className={`h-screen w-[40%] bg-white fixed top-0 right-0 z-50 transform transition-transform duration-500 
+            <div className={`h-screen w-full md:w-1/2 bg-white fixed top-0 right-0 z-50 transform transition-transform duration-500 
                 ${signupDrawer ? "translate-x-0" : "translate-x-full"}  `}>
 
 
