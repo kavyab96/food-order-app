@@ -6,7 +6,8 @@
         var search = window.location.search;
         if (search.indexOf("redirect=") !== -1) {
           var redirect = decodeURIComponent(search.split("redirect=")[1]);
-          window.history.replaceState(null, null, redirect);
+        //   window.history.replaceState(null, null, redirect);
+         window.location.replace(redirect); // hard replace
         }
       })();
     </script>
