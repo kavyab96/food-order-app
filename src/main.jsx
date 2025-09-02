@@ -84,7 +84,7 @@ const router = createBrowserRouter([
 
 ],
  {
-    basename: "/food-order-app" // <-- add this
+    basename: "/food-order-app/" // <-- add this
   }
 );
 

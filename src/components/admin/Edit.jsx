@@ -207,7 +207,7 @@ const Edit = ({ product, editItemModal, setEditItemModal,updateItem }) => {
                 </div>
 
                 {/* <div className='fixed top-6 left-[-10px] non bg-slate-400' > */}
-                <img src="/images/indian-food.webp" alt="image" className='w-[30%] sm:w-[30%] md:w-[20%] fixed top-4 sm:right-[4rem] right:[1rem] ' />
+                {/* <img src="images/indian-food.webp" alt="image" className='w-[30%] sm:w-[30%] md:w-[20%] fixed top-4 sm:right-[4rem] right:[1rem] ' /> */}
                 {/* </div> */}
 
 

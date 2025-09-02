@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Order App</title>
+
+    <!-- 👇 Add this redirect script -->
+    <script type="text/javascript">
+      (function() {
+        var search = window.location.search;
+        if (search.indexOf("redirect=") !== -1) {
+          var redirect = decodeURIComponent(search.split("redirect=")[1]);
+          window.history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
