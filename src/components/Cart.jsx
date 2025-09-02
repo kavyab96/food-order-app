@@ -28,10 +28,10 @@ const Cart = () => {
             </Link>
           </div>
         ) : (
-          <div className='w-full h-automin-h-screen flex flex-col md:flex-row items-start md:items-center justify-around gap-3 p-5'>
+          <div className='w-full md:h-[100vh] h-auto flex flex-col md:flex-row items-start md:items-center justify-around gap-3 p-5'>
 
             {/* Left: Cart + Bill */}
-            <div className="w-full  md:w-[55%] md:h-[90%] flex flex-col gap-2 p-6 bg-slate-400 rounded-lg">
+            <div className="w-full  md:w-[55%] h-[90%] flex flex-col gap-2 p-6 bg-slate-400 rounded-lg">
               
               {/* Cart Items */}
               <div className='w-full max-h-[60vh] overflow-y-auto flex flex-col gap-2 p-5'>
@@ -49,7 +49,7 @@ const Cart = () => {
             </div>
 
             {/* Right: Proceed To Pay */}
-            <div className="w-full md:w-[40%] md:h-[90%] text-center bg-slate-400 rounded-lg p-6">
+            <div className="w-full md:w-[40%] h-[90%] text-center bg-slate-400 rounded-lg p-6">
               <ProceedToPay />
             </div>
           </div>
