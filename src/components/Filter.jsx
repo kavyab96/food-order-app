@@ -24,7 +24,7 @@ const Filter = ({ filter, setFilter,ratingFilter,setRatingFilter,priceSort,setPr
                 <button
                     onClick={() => setOpen(!open)}
                     className="px-4 py-2 border rounded-lg shadow-sm bg-white 
-                     hover:bg-gray-100 focus:outline-none"
+                     hover:bg-gray-100 focus:outline-none dark:text-black"
                 >
                     Sort By
                 </button>
@@ -36,9 +36,9 @@ const Filter = ({ filter, setFilter,ratingFilter,setRatingFilter,priceSort,setPr
                         <div className="absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-20 p-3">
                             <p className="font-semibold text-gray-700 mb-1">Rating</p>
 
-                            <div className="flex flex-col gap-1 mb-3">
+                            <div className="flex flex-col gap-1 mb-3 dark:text-black">
 
-                                <label htmlFor='all' className="flex items-center gap-2">
+                                <label htmlFor='all' className="flex items-center gap-2 ">
                                     <input id='all' type="radio" value="all"
                                     checked={ratingFilter === "all"}
                                     onChange={(e)=>setRatingFilter(e.target.value)}
@@ -61,7 +61,7 @@ const Filter = ({ filter, setFilter,ratingFilter,setRatingFilter,priceSort,setPr
 
                             {/* Price Section */}
                             <p className="font-semibold text-gray-700 mb-1">Price</p>
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 dark:text-black">
                                 <label htmlFor='high-to-low' className="flex items-center gap-2">
                                     <input type="radio" value="high-to-low" 
                                     checked={priceSort === "high-to-low"}

@@ -50,7 +50,7 @@ const Checkout = () => {
 
                 <div className="w-full min-h-screen flex flex-col items-center bg-gray-100 p-5 dark:bg-slate-800">
                     {/* Header */}
-                    <div className="w-[55%] bg-slate-400 dark:bg-slate-500 p-[2rem] rounded-xl">
+                    <div className="w-full md:w-[55%] bg-slate-400 dark:bg-slate-500 p-[2rem] rounded-xl">
 
 
                         <div className="w-full flex gap-5  mb-6 ">
@@ -66,8 +66,8 @@ const Checkout = () => {
 
                         {/* Address Section */}
                         <div className="w-full max-w-4xl  bg-white shadow-md rounded-lg p-4 mb-6 dark:bg-slate-700">
-                            <h2 className="font-semibold text-lg mb-2">Delivery Address</h2>
-                            <p className="text-gray-600">{user?.address || "No address found"}</p>
+                            <h2 className="font-semibold text-lg mb-2 ">Delivery Address</h2>
+                            <p className="text-gray-600 dark:text-gray-300">{user?.address || "No address found"}</p>
                         </div>
 
 
