@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/food-order-app/">
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA redirect fix
+      (function() {
+        var l = window.location;
+        var repo = "/food-order-app"; // <-- your repo name here
+        var path = l.pathname.replace(repo, "");
+        var newUrl = repo + "/index.html?redirect=" + encodeURIComponent(path + l.search + l.hash);
+        l.replace(newUrl);
+      })();
+    </script>
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
